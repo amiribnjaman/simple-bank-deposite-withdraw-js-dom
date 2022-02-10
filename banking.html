@@ -25,16 +25,16 @@
                             <thead>
                               <tr class="d-flex justify-content-between border-bottom mb-2">
                                 <th class="border-0">Total Amount</th>
-                                <th class="border-0">$1200</th>
+                                <th class="border-0">$<span id="total-amount">1200</span> </th>
                               </tr>
                               <tr></tr>
                               <tr class="d-flex justify-content-between border-bottom mt-1">
                                 <th class="border-0">Last Deposite</th>
-                                <th class="border-0">$100</th>
+                                <th class="border-0">$<span id="last-deposite">00</span> </th>
                               </tr>
                               <tr class="d-flex justify-content-between border-bottom">
                                 <th class="border-0">Last Withdraw</th>
-                                <th class="border-0">$100</th>
+                                <th id="last-withdraw" class="border-0">$100</th>
                               </tr>
                             </thead>
                           </table>
@@ -52,46 +52,48 @@
                             <thead>
                                 <tr class="d-flex justify-content-between border-bottom">
                                     <td class="border-0" scope="col">Last deposite</td>
-                                    <td class="border-0" scope="col">$100</td>
+                                    <td class="border-0" scope="col">$<span id="last-deposite-card">00</span> </td>
                                 </tr>
                                 <tr class="d-flex justify-content-between border-bottom">
                                     <td class="border-0" scope="col">Total Deposite</td>
-                                    <th class="border-0" scope="col">$200</th>
+                                    <th class="border-0" scope="col">$<span id="total-deposite-card">00</span> </th>
                                 </tr>
                                 <tr class="d-flex justify-content-between mt-4">
                                     <th class="border-0 mx-auto" scope="col"><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#newDeposite" data-bs-whatever="@mdo">New Deposite</button></th>
+                                        data-bs-target="#newDeposite" id="newDeposite" data-bs-whatever="@mdo">New Deposite</button></th>
                                 </tr>
 
                                 <!-- modal -->
-
                                 <div class="modal fade mt-5" id="newDeposite" tabindex="-1"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Make a Deposite</h5>
+                                                <h5 class="modal-title d-block" id="exampleModalLabel">Make a Deposite</h5> <br>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
+                                            <div class="ms-3 mt-2">
+                                                <h6 id="msg" class="text-danger"></h6>
+                                            </div>
                                             <div class="modal-body">
-                                                <form>
+                                                <div>
                                                     <div class="mb-3">
                                                         <label for="recipient-name"
                                                             class="col-form-label">Deposite Amount (USD):</label>
-                                                        <input type="text" class="form-control" id="recipient-name">
+                                                        <input type="text" class="form-control" id="newDepositeInput">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="message-text"
                                                             class="col-form-label">Account:</label>
-                                                            <input type="password"  class="form-control" placeholder="A/C No.">
+                                                            <input type="text" id="accountNoDepo" class="form-control" placeholder="A/C No.">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Confirm Deposite</button>
+                                                <button type="button" id="confirmDepositeBtn" class="btn btn-primary">Confirm Deposite</button>
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +136,7 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form>
+                                                <div>
                                                     <div class="mb-3">
                                                         <label for="recipient-name"
                                                             class="col-form-label">Withdraw Amount (USD):</label>
@@ -145,7 +147,7 @@
                                                             class="col-form-label">Account:</label>
                                                             <input type="password"  class="form-control" placeholder="A/C No.">
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
@@ -167,6 +169,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script src="./js/banking.js"></script>
 </body>
 
 </html>
