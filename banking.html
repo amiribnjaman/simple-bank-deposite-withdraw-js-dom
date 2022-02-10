@@ -34,7 +34,7 @@
                               </tr>
                               <tr class="d-flex justify-content-between border-bottom">
                                 <th class="border-0">Last Withdraw</th>
-                                <th id="last-withdraw" class="border-0">$100</th>
+                                <th class="border-0">$<span id="last-withdraw">00</span></th>
                               </tr>
                             </thead>
                           </table>
@@ -86,7 +86,7 @@
                                                     <div class="mb-3">
                                                         <label for="message-text"
                                                             class="col-form-label">Account:</label>
-                                                            <input type="text" id="accountNoDepo" class="form-control" placeholder="A/C No.">
+                                                            <input type="password" id="accountNoDepo" class="form-control" placeholder="A/C No.">
                                                     </div>
                                                 </div>
                                             </div>
@@ -112,11 +112,11 @@
                             <thead>
                                 <tr class="d-flex justify-content-between border-bottom">
                                     <td class="border-0" scope="col">Last withdraw</td>
-                                    <td class="border-0" scope="col">$100</td>
+                                    <td class="border-0" scope="col">$<span id="last-withdraw-card">00</span> </td>
                                 </tr>
                                 <tr class="d-flex justify-content-between border-bottom">
                                     <td class="border-0" scope="col">Total withdraw</td>
-                                    <th class="border-0" scope="col">$200</th>
+                                    <th class="border-0" scope="col">$<span id="total-card-withdraw">00</span></th>
                                 </tr>
                                 <tr class="d-flex justify-content-between mt-4">
                                     <!-- <th class="border-0" scope="col"></th> -->
@@ -131,28 +131,31 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Make a Deposite</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Withdrow Now</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
+                                            </div>
+                                            <div class="ms-3 mt-2">
+                                                <h6 id="withdraw-msg" class="text-danger"></h6>
                                             </div>
                                             <div class="modal-body">
                                                 <div>
                                                     <div class="mb-3">
                                                         <label for="recipient-name"
                                                             class="col-form-label">Withdraw Amount (USD):</label>
-                                                        <input type="text" class="form-control" id="recipient-name">
+                                                        <input type="text" class="form-control"  id="withdraw-amount">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="message-text"
                                                             class="col-form-label">Account:</label>
-                                                            <input type="password"  class="form-control" placeholder="A/C No.">
+                                                            <input type="password"  class="form-control" placeholder="A/C No." id="withdraw-account">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-danger">Confirm Withdraw</button>
+                                                <button type="button" class="btn btn-danger" id="withdraw-confirm">Confirm Withdraw</button>
                                             </div>
                                         </div>
                                     </div>
