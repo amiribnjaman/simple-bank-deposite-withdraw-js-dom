@@ -20,26 +20,29 @@ let lastDeposite = parseFloat(lastDepositeText.innerText)
 
 let totalDepositeText = document.getElementById('total-deposite-card')
 
+// total Amout
+let totalAmount = document.getElementById('total-amount')
 
-confirmDepositeBtn.addEventListener('click', function () {
+confirmDepositeBtn.addEventListener('click', function(){
 
     let msg = ''
     let account = parseInt(userAcountDepo.value)
     let depositeAmount = parseFloat(newDepositeInput.value)
     console.log(typeof depositeAmount)
     let msgShow = document.getElementById('msg')
-    if (userAcountDepo.value == '' || depositeAmount == '') {
+    if(userAcountDepo.value == '' || depositeAmount == ''){
         msg = 'Please provide valid A/C No and amount'
-    } else if (account == accountNo) {
+    } else if(account == accountNo){
         msg = 'You have successfully deposite.'
         lastDepositeText.innerText = depositeAmount
         lastDepositeCardText.innerText = depositeAmount
 
 
-        let total = parseFloat(totalDepositeText.innerText) + depositeAmount
+        let total =  parseFloat(totalDepositeText.innerText) + depositeAmount
         console.log(lastDepositeCardText.innerText)
         totalDepositeText.innerText = total
 
+        totalAmount.innerText = parseFloat(totalAmount.innerText) + depositeAmount
     }
     newDepositeInput.value = ''
     userAcountDepo.value = ''
